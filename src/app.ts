@@ -22,7 +22,7 @@ constructor() {
 //Configuración de modulos
 config(): void {
   // configuración del puerto para el servidor
-  this.app.set("port", 3000);
+  this.app.set("port", 3001);
  
   // muestra las peticiones en consola
   this.app.use(morgan("dev"));
