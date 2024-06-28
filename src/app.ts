@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import authRoutes   from './routes/authRoutes';
+import usuarioRoutes from './routes/usuarioRoutes'
 /*
 Clase de inicio de nuestra aplicación NodeJsExpress
 Autor: Juan de Dios Ramirez Campos
@@ -22,7 +23,7 @@ constructor() {
 //Configuración de modulos
 config(): void {
   // configuración del puerto para el servidor
-  this.app.set("port", 3001);
+  this.app.set("port", 3000);
  
   // muestra las peticiones en consola
   this.app.use(morgan("dev"));
@@ -33,10 +34,12 @@ config(): void {
   // solo se permiten peticiones en formato JSON
   this.app.use(bodyParser.json());
   this.app.use(bodyParser.urlencoded({extended: false,}))
+  
   }
 //Configura Las rutas
 routes() {
   this.app.use("/",authRoutes)
+  this.app.use("/usuario",usuarioRoutes)
 }
 }
 const server = new Server();
