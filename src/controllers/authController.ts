@@ -33,7 +33,8 @@ class AuthController {
                     let token= jwt.sign(newUser, process.env.SECRET,{expiresIn:'1h'})
                     return res.json({ message: "Autenticación correcta", token, code: 0 });
             }
-        })
+        }
+      )
         
            
            
